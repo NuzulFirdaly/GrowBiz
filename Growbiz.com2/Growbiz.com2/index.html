@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true"
+    <meta charset="utf-8">
+    <title>GrowBiz!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+    <!--- animations (Aos js library) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Swiper CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    </head>
+  <style media="screen">
+  html{
+    overflow-x: hidden;
+  }
+  .navbar{
+    z-index: 5;
+  }
+    body{
+      overflow-x:hidden;
+    }
+    .first{
+      padding-top: 10vh;
+      padding-bottom:10vh;
+      background-color: black;
+    }
+    .slogan{
+      font-family: 'Viga', sans-serif;
+      font-size: 3vw;
+      color: white;
+      width: 400px;
+      word-wrap: break-word;
+      text-align:right;
+    }
+    #sloganParagraph{
+      font-family: 'Viga', sans-serif;
+      color: white;
+      width: 400px;
+      word-wrap: break-word;
+      text-align:right;
+      font-size: 1vw;
+    }
+    .sectionHeader{
+      font-family: 'Viga', sans-serif;
+      font-size: 4vw;
+      color: black;
+      text-align:left;
+    }
+    .sectionHeader2{
+      font-family: 'Viga', sans-serif;
+      font-size: 4vw;
+      color: black;
+      text-align: right;
+    }
+    .word-wrap{
+      width: 400px;
+      word-wrap: break-word;
+    }
+    .word-wrap2{
+      text-align: right;
+      padding-left: 50%;
+      word-wrap: break-word;
+    }
+
+    /* card slider swiper js */
+    .swiper-container {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 400px;
+      height: 500px;
+    }
+
+
+  /*cardSwiper */
+  .cardSwiper{
+    position: relative;
+    background: #fff;
+    width: 400px;
+    height:500px;
+    margin: 0 auto;
+  }
+  .cardSwiper .content{
+    widows: 400px;
+    padding:30px;
+    box-sizing: border-box;
+  }
+  .cardSwiper .sliderText{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+  }
+  .cardSwiper .sliderText h3{
+    color: #fff;
+    font-size: 3em;
+    font-family: 'Viga', sans-serif;
+
+  }
+    .cardSwiper .content p{
+    }
+  .cardSwiper .content a {
+    display: inline-block;
+    margin: 10px 0 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid #262626;
+    color: #262626;
+    font-weight: 600;
+  }
+
+
+
+    /* media queries to scale */
+    @media screen and (max-width: 700px) {
+      .slogan {
+      font-size: 28px;
+      width: 90vw;
+    }
+    #sloganParagraph{
+      font-size: 11px;
+      width: 90vw;
+    }
+    .word-wrap{
+      font-size: 11px;
+      width: 200px;
+      word-wrap: break-word;
+    }
+    .word-wrap2{
+      font-size: 11px;
+      text-align: right;
+      padding-left: 50%;
+      word-wrap: break-word;
+    }
+    .sectionHeader, .sectionHeader2{
+      font-size: 28px;
+    }
+    .swiper-container {
+      width: 100vw;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 50vw;
+      height: 50vh;
+    }
+    .cardSwiper{
+      position: relative;
+      background: #fff;
+      width: 50vw;
+      height:40vh;
+      margin: 0 auto;
+    }
+    .cardSwiper .content{
+      widows: 200px;
+      padding: 10px 0 0 0;
+      justify-content: flex-start;
+      box-sizing: border-box;
+    }
+    .cardSwiper .sliderText{
+      position: relative;
+      width: 40vw;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+    }
+    .cardSwiper .sliderText h3{
+      color: #fff;
+      font-size: 3vh;
+      font-family: 'Viga', sans-serif;
+
+    }
+      .cardSwiper .content p{
+        font-size: 1.5vh;
+        width: 150px;
+        word-wrap: break-word;
+      }
+    .cardSwiper .content a {
+      display: inline-block;
+      text-decoration: none;
+      border: 2px solid #262626;
+      color: #262626;
+      font-weight: 600;
+    }
+  }
+
+  </style>
+  <body>
+  <!-- navbar-->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">GrowBiz</a>
+        <!--- put brand logo here --->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transformations</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="retail.html">Retail</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">F&B</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Dropshipping</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="testimonials.html">Testimonials<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="di.html">Digital Intelligence</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="operation.html">Operations</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Finance</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Integrations</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Cloud</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Applications</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Systems</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Architectures, Real Estate</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">About Us<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+      </nav>
+  <!-- content div -->
+  <div class="first">
+    <div class="row">
+      <div class="col-lg-6 my-auto ">
+        <div class="card align-items-end"> <!--- yooo use this lollll --->
+          <img id="DigitizationProcess" class="img-fluid" src="images\digitizationprocess.png" alt="An Illustration of simplified digitization" data-aos="fade-right" data-aos-duration="2000">
+        </div>
+      </div>
+      <div class="col-lg-6 my-auto">
+        <div class="card-body">
+          <h1 class="slogan" data-aos="fade-left" data-aos-duration="2000" >Connect, Digitize and
+            Grow your business!</h1>
+          <h6 id="sloganParagraph" data-aos="fade-left" data-aos-duration="3000">
+            GrowBiz is a B2B application that helps developing businesses move on to the next stage of development
+            with the aid of services and products that encourages Digital Transformation.
+            With the initiative of knowing the businesses' needs, can be made efficient and open new revenue opportunities.
+          </h6>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    <hr>
+  <!-- whitepaper cards -->
+  <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- slide Retail -->
+        <div class="swiper-slide">
+          <div class="cardSwiper">
+            <div class="sliderText">
+              <h3>Retail</h3>
+            </div>
+            <div class="content">
+              <p>Justin is a traditional retail business owner. During the COVID-19 pandemic he had realized his business inefficiencies and limits.
+                Justin is looking for new innovative ways that is Cheap and could provide more efficient and revenue-producing business opportunities</p>
+              <a class="readMore" href="retail.html">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!-- slide 2 -->
+        <div class="swiper-slide">
+          <div class="cardSwiper">
+            <div class="sliderText">
+              <h3>FNB</h3>
+            </div>
+            <div class="content">
+              <p>Tentative</p>
+              <a class="readMore" href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!-- slide 3 -->
+        <div class="swiper-slide">
+          <div class="cardSwiper">
+            <div class="sliderText">
+              <h3>Dropshipping</h3>
+            </div>
+            <div class="content">
+              <p>Tentative</p>
+              <a class="readMore" href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  <div class="container">
+        <h1 class="sectionHeader" >Background</h1>
+        <p class="word-wrap">Through surveying small business proprietors (n=60), we came to the conclusion that during the COVID-19 Restriction had made most of their traditional operation redudant and unproductive. <br>
+          Factors that were greatly affected were; Customer Relationships, Brick and mortar operations and Optimization.
+          We also empathized knowing that most small business are operated to provide for its owner and employees, and without it running efficiently, would have dentrimental affects.
+         </p>
+         <br>
+         <h1 class="sectionHeader2">Solution</h1>
+         <p class="word-wrap2">"Social-Media for Businesses"
+           where businesses are able to reach out to other service providing business that specializes in the digital transformation field.
+           The platform shows the profile of those service providing business, and how it has digitize other small businesses.
+           Like AWS' WhitePapers, the products that was used can also be used for other similar businesses looking to digitize themselves(DIY)
+          </p>
+
+    </div>
+    <hr>
+
+
+  </body>
+  <script>
+  //initialize aos
+    AOS.init();
+  //initialize Swiper
+  var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows : false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  });
+  </script>
+</html>

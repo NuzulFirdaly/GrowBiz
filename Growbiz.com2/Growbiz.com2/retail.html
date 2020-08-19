@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true"
+    <meta charset="utf-8">
+    <title>Operations</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+    <!--- animations below -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <style media="screen">
+    body{
+      background-color: black;
+    }
+    .subject{
+      text-align: center;
+      margin-top: 11em;
+      font-family: 'Viga', sans-serif;
+      font-size: 40px;
+      color: white;
+    }
+    .company{
+      padding-top: 80px;
+    }
+    img:hover {
+      transition: all 0.3s ease 0s;
+    transform: scale(1.1,1.1);
+  }
+  p{
+    text-align: center;
+    color: white;
+  }
+  ol>li{
+    text-align: justify;
+    padding: 5px;
+  }
+  li>span{
+    font-weight: bold;
+  }
+  .section-content > a{
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid #262626;
+    color: #262626;
+    font-weight: 600;
+  }
+  .ActualImplementation{
+    text-align: center;
+    margin-top: 3em;
+    font-family: 'Viga', sans-serif;
+    font-size: 40px;
+    color: white;
+  }
+  /* timeline css */
+
+  .process-wrapper {
+  	margin:auto;
+  	max-width:1080px;
+
+  }
+  .new{
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+  }
+  a.new:hover{
+    background-color: grey;
+    color: white;
+  }
+  .ActualImplementation > a{
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+  }
+  .ActualImplementation > a:hover{
+    background-color: grey;
+    color: white;
+  }
+  #progress-bar-container {
+  	position:relative;
+  	width:90%;
+  	margin:auto;
+  	height:100px;
+  	margin-top:65px;
+  }
+
+  #progress-bar-container ul {
+  	padding:0;
+  	margin:0;
+  	padding-top:15px;
+  	z-index:9999;
+  	position:absolute;
+  	width:100%;
+  	margin-top:-40px
+  }
+
+  #progress-bar-container li:before {
+  	content:" ";
+  	display:block;
+  	margin:auto;
+  	width:30px;
+  	height:30px;
+  	border-radius:50%;
+  	border:solid 2px #aaa;
+  	transition:all ease 0.3s;
+
+  }
+
+  #progress-bar-container li.active:before, #progress-bar-container li:hover:before {
+  	border:solid 2px #fff;
+
+  	background: #fff;
+  }
+
+  #progress-bar-container li {
+  	list-style:none;
+  	float:left;
+  	width:20%;
+  	text-align:center;
+  	color:#aaa;
+  	text-transform:uppercase;
+  	font-size:11px;
+  	cursor:pointer;
+  	font-weight:700;
+  	transition:all ease 0.2s;
+  	vertical-align:bottom;
+  	height:60px;
+  	position:relative;
+  }
+
+  #progress-bar-container li .step-inner {
+  	position:absolute;
+  	width:100%;
+  	bottom:0;
+      font-size: 14px;
+  }
+
+  #progress-bar-container li.active, #progress-bar-container li:hover {
+  	color:#444;
+  }
+
+  #progress-bar-container li:after {
+  	content:" ";
+  	display:block;
+  	width:6px;
+  	height:6px;
+  	background:#777;
+  	margin:auto;
+  	border:solid 7px #fff;
+  	border-radius:50%;
+  	margin-top:40px;
+  	box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
+  	transition:all ease 0.2s;
+
+  }
+
+  #progress-bar-container li:hover:after {
+  	background:#555;
+  }
+
+  #progress-bar-container li.active:after {
+  	background:#207893;
+  }
+
+  #progress-bar-container #line {
+  	width:80%;
+  	margin:auto;
+  	background: #eee;
+  	height:6px;
+  	position:absolute;
+  	left:10%;
+  	top:57px;
+  	z-index:1;
+  	border-radius:50px;
+  	transition:all ease 0.9s;
+  }
+
+  #progress-bar-container #line-progress {
+  	content:" ";
+  	width:3%;
+  	height:100%;
+  	background: #207893;
+  	background: linear-gradient(to right, #207893 0%,#2ea3b7 100%);
+  	position:absolute;
+  	z-index:2;
+  	border-radius:50px;
+  	transition:all ease 0.9s;
+  }
+
+  #progress-content-section {
+  	width:90%;
+  	margin: auto;
+  	background: #f3f3f3;
+  	border-radius: 4px;
+  }
+
+  #progress-content-section .section-content {
+  	padding:30px 40px;
+  	text-align:center;
+  }
+
+  #progress-content-section .section-content h2 {
+  	font-size:17px;
+  	text-transform:uppercase;
+  	color:#333;
+  	letter-spacing:1px;
+  }
+
+  #progress-content-section .section-content p {
+  	font-size:16px;
+  	line-height:1.8em;
+  	color:#777;
+  }
+
+  #progress-content-section .section-content {
+  	display:none;
+  	animation: FadeInUp 700ms ease 1;
+  	animation-fill-mode:forwards;
+  	transform:translateY(15px);
+  	opacity:0;
+  }
+
+  #progress-content-section .section-content.active {
+  	display:block;
+  }
+
+  @keyframes FadeInUp {
+  	0% {
+  		transform:translateY(15px);
+  		opacity:0;
+  	}
+
+  	100% {
+  		transform:translateY(0px);
+  		opacity:1;
+  	}
+  }
+    @media screen and (max-width: 700px) {
+
+      #progress-bar-container li .step-inner {
+      	position:absolute;
+      	bottom:0;
+          font-size: 8px;
+      }
+  }
+  </style>
+  <body>
+    <script>
+    AOS.init();
+    </script>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">GrowBiz</a>
+          <!--- put brand logo here --->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown active ">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transformations</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item active" href="retail.html">Retail</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">F&B</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Dropshipping</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="testimonials.html">Testimonials<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item " href="di.html">Digital Intelligence</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="operation.html">Operations</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Finance</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Integrations</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Cloud</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Applications</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Systems</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Architectures, Real Estate</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">About Us<span class="sr-only">(current)</span></a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+        </nav>
+    <h1 class="subject" data-aos="fade-right" data-aos-duration="3000" >The Digital Retail.</h1>
+    <p data-aos="fade-up"data-aos-duration="3000" >Digital Transformation of retail businesses</p>
+
+    <div class="container fluid">
+      <!--video-->
+          <div class="row">
+              <div class="col-md company" data-aos="fade-up" data-aos-duration="3000">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-items"  width="560" height="315" src="https://www.youtube.com/embed/336YkwayCD4?start=182" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        <!-- products
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up" data-aos-duration="3000">
+                    <h3 class="subject">products</h3>
+                    <p>Do-It-Yourself</p>
+                    <a href="https://www.grow.com/"><img src="images\growdotcom-vertical-gradient-dark.png" class="img-fluid" alt="All in one SaaS"></a>
+                  </div>
+                  <div class="col-md-6" data-aos="fade-up" data-aos-duration="3000" >
+                    <h3 class="subject" >Companies</h3>
+                    <p>Consult companies specialising in this field</p>
+                    <a class="link "href="https://www.accenture.com/sg-en" ><img src="images\accenture.png" class="img-fluid company" alt="Accenture Company"></a>
+
+                  </div>
+                </div> -->
+        </div>
+
+
+        <!-- timeline -->
+        <div class="process-wrapper">
+          <div id="progress-bar-container">
+          	<ul>
+          		<li class="step step01 active"><div class="step-inner">New Business models</div></li>
+          		<li class="step step02"><div class="step-inner">New Revenue Models</div></li>
+          		<li class="step step03"><div class="step-inner">New Operating Models</div></li>
+          		<li class="step step04"><div class="step-inner">New Leadership</div></li>
+          		<li class="step step05"><div class="step-inner">New Data-Driven Models</div></li>
+          	</ul>
+
+          	<div id="line">
+          		<div id="line-progress"></div>
+          	</div>
+          </div>
+
+            <div id="progress-content-section">
+              	<div class="section-content discovery active">
+              		<h2>New Business models</h2>
+              		<p>Research by Deloitte and OpenMatters has found that investors are placing a greater value on companies with business
+                      models that embrace today’s technology, emphasize intangible assets (such as intellectual property), and enable the
+                      crowdsourcing of products and services through the use of networks.
+                      <br><br>
+                      Digital technologies have enabled the emergence of the following business models: peer-to-peer networks, freemium,
+                      delivering outcomes (mainly driven by Internet of Things), crowdfunding/crowdsourcing, as a service, ecommerce/marketplaces and personalization, among others.
+                    </p>
+              	</div>
+
+              	<div class="section-content strategy">
+              		<h2>New Revenue Model</h2>
+                  <p>Many companies still focus too much on the equation that counts: revenue = price x volume. Moreover,
+                    focusing solely on product, service and process can obscure other, less obvious ways for companies to create value.
+                    Leaders should widen the scope of their strategic thinking to analyze how other frameworks, such as networks,
+                    channels and customer engagement can create value for their business.9 With that in mind, a number of new revenue
+                    sources that enable enterprises to profit from the possibilities that digital technology opens up. </p>
+              		<ol type="1">
+                    <li> <span>Transaction.</span> Traditional manufactured products are packaged and resold from one to many users; ownership is
+                          transferred from seller to buyer through distribution channels.
+                        </li>
+                    <li> <span>Capacity leasing.</span> Capacity is monetized in the form of human time, machine or asset availability; companies
+                          manage supply of capacity through demand forecasting, customer orders and sales
+                        </li>
+                    <li> <span>Licensing.</span> Technology, brand or intangible assets are licensed for periods of time to reflect the value of the
+                        original invention but without the inventors needing to market or sell the product/service themselves
+                        </li>
+                    <li> <span>Subscription.</span> Products/services are subscribed to, usually for a period of time, which can be as short as a day
+                        but often for longer, locking customers in with a reduced upfront cost.
+                    </li>
+                    <li> <span>Commission.</span> Agents collect commissions (or a margin) for matching buyers to sellers for a given
+                        product/service; agents can be people or, more recently, scalable digital platforms.
+                        </li>
+                    <li> <span>Advertising.</span> Often used in media and entertainment as a way to distribute and share ideas, with associated
+                        products/services marketed through the medium
+                        </li>
+                    <li> <span>Trading.</span> Buy low, sell high, if successful; traders monetize mispriced goods and services due to fluctuations in
+                        demand and supply using market knowledge.
+                        </li>
+                    <li> <span>Donations.</span> Agents collect commissions (or a margin) for matching buyers to sellers for a given
+                        product/service; agents can be people or, more recently, scalable digital platforms.
+                        </li>
+                    <li> <span>Subsidies.</span> . Often found in public service organizations whereby traditional revenue models only make up part of
+                        the cost to provide the service; subsidies typically incentivize improvements in quality of service.
+                        </li>
+
+                  </ol>
+              	</div>
+
+              	<div class="section-content creative">
+              		<h2>New Operating Model.</h2>
+              		<p>From an analysis of a number of leading companies that have fully embraced the potential that digital offers, five
+                      successful digital operating models have been identified. These models have been applied across industries and vary in
+                      their focus, but all are based on some common principles. They replace rigid approaches to technology, data and
+                      processes with flexibility, while also substituting a perfectionist and siloed culture with one that is open to innovation and
+                      interaction with customers and partners.</p>
+                  <ol type="1">
+                    <li> <span>Customer-centric.</span> This model focuses on making customers’ lives easier and emphasizes front-office
+                        processes. Leading exponents include Nespresso and the UK retailer Argos, but it can be applied across
+                        industries. It works best with a culture that puts the client first and a decentralized structure that empowers frontline staff. Its success is best measured by a higher net promoter score (NPS).
+                        </li>
+                    <li> <span>Extra-frugal.</span> This model thrives on a culture of ‘less is more’ and a standardized organizational structure. By
+                        optimizing manufacturing, supply and support processes, it can provide a high-quality service at a low cost. A
+                        prime example of this model is tire manufacturer Michelin
+                        </li>
+                    <li> <span>Data-powered.</span> Taking its inspiration from one of the precepts of the management theorist W. Edwards Deming –
+                      “In God we trust. Others must bring data” – this model is built around prowess in analytics and software
+                      intelligence. Epitomized by Google and Netflix, data-powered companies have an agile culture focused on
+                      innovation through empirical experimentation. Usually built around a hub-and-spoke structure, this model
+                      measures success primarily through its return on investment.
+                        </li>
+                    <li> <span>Skynet.</span> Named after the conscious, artificial general intelligence of the Terminator films, this model makes
+                      intensive use of machines to increase productivity and flexibility in production. Pioneered by enterprises such as
+                      Amazon and Rio Tinto, Skynet organizations are characterized by an engineer-led culture dedicated to
+                      automation. This model is often particularly suited to manufacturing processes. A key performance indicator is
+                      the ratio of full-time employees to revenue.
+                    </li>
+                    <li> <span>Open and liquid.</span> This model looks outward with a view to creating an ecosystem that can enrich the customer
+                      proposition. Built around a sharing customer, all processes in organizations of this kind are characterized by a
+                      constant flow of dialog with the outside world. Examples include Facebook and PayPal. A key measure of
+                      success is NPS.
+                        </li>
+                  </ol>
+
+              	</div>
+
+              	<div class="section-content production">
+              		<h2>New Leadership</h2>
+              		<p>Creating a workplace that attracts high-caliber digital workers requires a progressive and forward-looking organizational
+                      culture. The impetus to set this culture has to come from leadership. The traditional attributes that set a good leader
+                      apart remain relevant, but today’s leaders also need to be well-versed in digital and how it’s disrupting their business.
+                      CEOs such Jeff Immelt at GE, Microsoft’s Satya Nadella and Marc Benioff of Salesforce.com are moving away from
+                      hierarchical, autocratic top-down approaches and looking instead to create more open, collaborative environments,
+                      powered through digital collaboration tools. This resonates well with millennials. </p>
+                    <ol type="1">
+                      <li> <span>Creator of vision and mission.</span> Expand company’s mission statement to encompass a transformation purpose. </li>
+                      <li> <span>Strategic planner.</span>Move from five-year to one-year planning cycles, driven by data and predictive analytics. Focus more on experimenting instead of long-term planning.
+                          </li>
+                      <li> <span>Driver of information-based business models.</span> Find and develop new products and services that are (fully) dataand information-based for scalability.
+                          </li>
+                      <li> <span>Enabler of the shift to on-demand operating models. </span> Benefit from communities, crowdsourcing and staff onmand.
+                      </li>
+                      <li> <span>Innovation promoter.</span> Promote external innovation and go beyond product, process and service innovation.
+                        success is NPS.
+                          </li>
+                      <li> <span>Operational excellence driver.</span>  Automate processes in all departments.
+                          </li>
+
+                      </ol>
+              	</div>
+
+              	<div class="section-content analysis">
+              		<h2>New Data-Driven Models*</h2>
+              		<p>To exploit the potential of new, data-driven business models, companies will need to use data to disrupt their business
+                    (before someone else does). Companies have to explore the entire big data ecosystem and be nimble. The big-data
+                    landscape is in a state of flux with new data sources and big-data technologies emerging, such as Hadoop and Hive. </p>
+                <ol>
+                  <li>Explore all available data and be prepared to consider a broad range of technologies when developing a big-data
+                    strategy that could prove differentiating in the market.</li>
+                  <li>Start local, end global; users in larger companies are winning big by starting small and staying realistic with their
+                    expectations, helped by frequent, direct CIO involvement and strong C-suite support.</li>
+                  <li>Focus resources on proving value in one area and then letting the results cascade across the wider enterprise,
+                    rather than attempting to do everything at once.</li>
+                    <li>Remember the differences between good data and bad data; every hour spent hunting down an orphan database
+                        hurts the return on investment of your analytics team, so businesses need to make data as ubiquitous as possible</li>
+                </ol>
+                  <a class="new" href="operation.html">Solutions</a>
+
+            	</div>
+        </div>
+        <div class="ActualImplementation">
+            <h1>Self-Assements:</h1>
+            <a href="https://smedigitalisationstudy.experian.com.sg/self-assessment/retail" target="_blank">Go Digital Assesments for retail</a>
+        </div>
+        <!-- timeline js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+         <script>
+
+            $(".step").click( function() {
+        	$(this).addClass("active").prevAll().addClass("active");
+        	$(this).nextAll().removeClass("active");
+        });
+
+        $(".step01").click( function() {
+        	$("#line-progress").css("width", "3%");
+        	$(".discovery").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".step02").click( function() {
+        	$("#line-progress").css("width", "25%");
+        	$(".strategy").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".step03").click( function() {
+        	$("#line-progress").css("width", "50%");
+        	$(".creative").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".step04").click( function() {
+        	$("#line-progress").css("width", "75%");
+        	$(".production").addClass("active").siblings().removeClass("active");
+        });
+
+        $(".step05").click( function() {
+        	$("#line-progress").css("width", "100%");
+        	$(".analysis").addClass("active").siblings().removeClass("active");
+        });
+      </script>
+  </body>
+</html>
