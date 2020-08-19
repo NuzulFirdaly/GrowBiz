@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true"
+    <meta charset="utf-8">
+    <title>Operations</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+    <!--- animations below -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <style media="screen">
+    body{
+      background-color: black;
+    }
+    .subject{
+      text-align: center;
+      margin-top: 11em;
+      font-family: 'Viga', sans-serif;
+      font-size: 40px;
+      color: white;
+    }
+    .company{
+      padding-top: 80px;
+    }
+    img:hover {
+      transition: all 0.3s ease 0s;
+    transform: scale(1.1,1.1);
+  }
+  p{
+    text-align: center;
+    color: white;
+  }
+  </style>
+  <body>
+    <script>
+    AOS.init();
+    </script>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">GrowBiz</a>
+          <!--- put brand logo here --->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transformations</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="retail.html">Retail</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">F&B</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Dropshipping</a>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="testimonials.html">Testimonials<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item " href="di.html">Digital Intelligence</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="operation.html">Operations</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Finance</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Integrations</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Cloud</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Applications</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Systems</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Architectures, Real Estate</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">About Us<span class="sr-only">(current)</span></a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+        </nav>
+    <h1 class="subject" data-aos="fade-right" data-aos-duration="3000" >Implement your connections.</h1>
+    <p data-aos="fade-up"data-aos-duration="3000" >Optimize your business processes and operations!</p>
+
+    <div class="container fluid">
+      <div class="row">
+          <div class="col-md-6" data-aos="fade-up" data-aos-duration="3000">
+              <h3 class="subject">products</h3>
+              <p>Do-It-Yourself</p>
+              <a href="https://www.grow.com/"><img src="images\growdotcom-vertical-gradient-dark.png" class="img-fluid" alt="All in one SaaS"></a>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-duration="3000" >
+              <h3 class="subject" >Companies</h3>
+              <p>Consult companies specialising in this field</p>
+              <a class="link "href="https://www.accenture.com/sg-en" ><img src="images\accenture.png" class="img-fluid company" alt="Accenture Company"></a>
+
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md company" data-aos="fade-up" data-aos-duration="3000">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-items" width="560" height="315" src="https://www.youtube.com/embed/Q2dewZweAtU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              </div>
+                </div>
+            </div>
+
+        </div>
+
+
+  </body>
+</html>
