@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true"
+    <meta charset="utf-8">
+    <title>GrowBiz!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+    <!--- animations (Aos js library) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Swiper CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    </head>
+  <style media="screen">
+  html{
+    overflow-x: hidden;
+  }
+  .navbar{
+    z-index: 5;
+  }
+  .navbar-brand{
+      font-family: 'Viga', sans-serif;
+      font-size: 35px;
+      font-weight: bold;
+  }
+    body{
+      overflow-x:hidden;
+    }
+    .first{
+      padding-top: 30vh;
+      padding-bottom:30vh;
+      background-color: black;
+      padding-right: 5vw;
+    }
+    .second{
+      padding-top: 30vh;
+      padding-bottom:30vh;
+    }
+    .slogan{
+      font-family: 'Viga', sans-serif;
+      font-size: 4vw;
+      color: white;
+      word-wrap: break-word;
+      text-align:right;
+    }
+    #sloganParagraph{
+      font-family: 'Viga', sans-serif;
+      color: white;
+      word-wrap: break-word;
+      text-align:right;
+      font-size: 1.4vw;
+    }
+    .sectionHeader{
+      font-family: 'Viga', sans-serif;
+      font-size: 3vw;
+      color: black;
+      text-align:left;
+      padding: 10px;
+    }
+    .sectionHeader2{
+      font-family: 'Viga', sans-serif;
+      font-size: 3vw;
+      color: black;
+      text-align: right;
+    }
+    .word-wrap{
+      font-family: 'Viga', sans-serif;
+      font-size: 1vw;
+      width: 400px;
+      word-wrap: break-word;
+        color: grey;
+    }
+    .word-wrap2{
+      font-family: 'Viga', sans-serif;
+      font-size: 1vw;
+      text-align: right;
+      padding-left: 50%;
+      word-wrap: break-word;
+      color: grey;
+    }
+
+    /* card slider swiper js */
+    .swiper-container {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 400px;
+      height: 500px;
+    }
+
+
+  /*cardSwiper */
+  .cardSwiper{
+    position: relative;
+    background: #fff;
+    width: 400px;
+    height:500px;
+    margin: 0 auto;
+  }
+  .cardSwiper .content{
+    widows: 400px;
+    padding:30px;
+    box-sizing: border-box;
+  }
+  .cardSwiper .sliderText{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+  }
+  .cardSwiper .sliderText h3{
+    color: #fff;
+    font-size: 3em;
+    font-family: 'Viga', sans-serif;
+
+  }
+    .cardSwiper .content p{
+    }
+  .cardSwiper .content a {
+    display: inline-block;
+    margin: 10px 0 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid #262626;
+    color: #262626;
+    font-weight: 600;
+  }
+
+
+
+    /* media queries to scale */
+    @media screen and (max-width: 700px) {
+      .slogan {
+      font-size: 28px;
+      width: 90vw;
+    }
+    #sloganParagraph{
+      font-size: 11px;
+      width: 90vw;
+    }
+    .word-wrap{
+      font-size: 11px;
+      width: 200px;
+      word-wrap: break-word;
+    }
+    .word-wrap2{
+      font-size: 11px;
+      text-align: right;
+      padding-left: 50%;
+      word-wrap: break-word;
+    }
+    .sectionHeader, .sectionHeader2{
+      font-size: 28px;
+    }
+    .swiper-container {
+      width: 100vw;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 50vw;
+      height: 50vh;
+    }
+    .cardSwiper{
+      position: relative;
+      background: #fff;
+      width: 50vw;
+      height:40vh;
+      margin: 0 auto;
+    }
+    .cardSwiper .content{
+      widows: 200px;
+      padding: 10px 0 0 0;
+      justify-content: flex-start;
+      box-sizing: border-box;
+    }
+    .cardSwiper .sliderText{
+      position: relative;
+      width: 40vw;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+    }
+    .cardSwiper .sliderText h3{
+      color: #fff;
+      font-size: 3vh;
+      font-family: 'Viga', sans-serif;
+
+    }
+      .cardSwiper .content p{
+        font-size: 1.5vh;
+        width: 150px;
+        word-wrap: break-word;
+      }
+    .cardSwiper .content a {
+      display: inline-block;
+      text-decoration: none;
+      border: 2px solid #262626;
+      color: #262626;
+      font-weight: 600;
+    }
+  }
+
+  </style>
+  <body>
+  <!-- navbar-->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">GrowBiz</a>
+        <!--- put brand logo here --->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transformations</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="retail.html">Retail</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">F&B</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Dropshipping</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">About Us<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+      </nav>
+  <!-- content div -->
+  <div class="first">
+    <div class="row">
+      <div class="col-lg-6 my-auto ">
+        <div class="card align-items-end"> <!--- yooo use this lollll --->
+          <img id="DigitizationProcess" class="img-fluid" src="images\digitizationprocess.png" alt="An Illustration of simplified digitization" data-aos="fade-right" data-aos-duration="2000">
+        </div>
+      </div>
+      <div class="col-lg-6 my-auto">
+        <div class="card-body">
+          <h1 class="slogan" data-aos="fade-left" data-aos-duration="2000" >Digitally transform your business now!</h1>
+          <h6 id="sloganParagraph" data-aos="fade-left" data-aos-duration="3000">
+            Learn how different industries/sectors are restructuring their business models.
+          </h6>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    <hr>
+    <div class="container second">
+          <h1 class="sectionHeader" data-aos="fade-right" data-aos-duration="3000">UP YOUR GAME</h1>
+          <p class="word-wrap" data-aos="fade-right" data-aos-duration="3000">BEAT OUT YOUR BUSINESS COMPETITORS BY UTILIZING DIGITAL SOLUTIONS
+           </p>
+           <br>
+           <h1 class="sectionHeader2" data-aos="fade-left" data-aos-duration="2000">UNDESTAND YOUR NEEDS</h1>
+           <p class="word-wrap2" data-aos="fade-left" data-aos-duration="2000"> FIND THE RIGHT SOLUTIONS TO YOUR BUSINESS NEEDS!
+            </p>
+
+      </div>
+      <hr>
+  <!-- whitepaper cards -->
+  <div class="swiper-container second">
+    <h1 class="sectionHeader" style="text-align:center;,">Industry Specific Transformations</h1>
+      <div class="swiper-wrapper">
+        <!-- slide Retail -->
+        <div class="swiper-slide">
+          <div class="cardSwiper">
+            <div class="sliderText">
+              <h3>Retail</h3>
+            </div>
+            <div class="content">
+              <p>Justin is a traditional retail business owner.  He is looking forward to restructuring his business model to keep up with the market trends. He has managed to utilize different digital solution such as Inventory managment Systems, ERP, CRMS, big data and forecasting models.</p>
+              <a class="readMore" href="retail.html">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!-- slide 2 -->
+        <div class="swiper-slide">
+          <div class="cardSwiper">
+            <div class="sliderText">
+              <h3>FNB</h3>
+            </div>
+            <div class="content">
+              <p>Tentative</p>
+              <a class="readMore" href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!-- slide 3 -->
+        <div class="swiper-slide">
+          <div class="cardSwiper">
+            <div class="sliderText">
+              <h3>Dropshipping</h3>
+            </div>
+            <div class="content">
+              <p>Tentative</p>
+              <a class="readMore" href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  <h1 class="sectionHeader" style="text-align:center;,">Testimonials</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <p>"As a fashion retailer and with GrowBiz's self assesment and transformation blueprint, we were able to quickly identify areas and services that meets our needs.
+            Sales Management Systems, CRMs, IMs were tailored specificly for our business from different vendors."</p>
+        </div>
+      </div>
+    </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <p>"Through GROWBIZ and the service providing companies that growbiz has managed to correlate my needs to,
+              <br> i have managed to restructure my business amidst the covid-19 pandemic"</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <p>"My business has always been struggling to keep up with market trends, and we were always skeptical about digital solutions,
+              Because of COVID-19. we had to pivot in a new direction and restructured our business model to be more data driven with the help of digital solution recommended by GrowBiz."</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <hr>
+  </body>
+  <script>
+  //initialize aos
+    AOS.init();
+  //initialize Swiper
+  var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows : false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  });
+  </script>
+</html>
